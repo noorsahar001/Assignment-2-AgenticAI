@@ -8,9 +8,10 @@ set_tracing_disabled(True)
 load_dotenv()
 gemini_api_key = os.getenv("GEMINI_API_KEY")
 
-#
+
 if not gemini_api_key:
     raise ValueError("GEMINI_API_KEY is missing in .env file!")
+
 
 external_client = AsyncOpenAI(
     api_key=gemini_api_key,
@@ -63,3 +64,4 @@ If user asks anything else, say: 'Sorry, I can only answer predefined questions.
 
 if __name__ == "__main__":
     main()
+
